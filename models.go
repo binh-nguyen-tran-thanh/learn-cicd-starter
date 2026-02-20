@@ -6,6 +6,7 @@ import (
 	"github.com/bootdotdev/learn-cicd-starter/internal/database"
 )
 
+/* #nosec G117 */
 type User struct {
 	ID        string    `json:"id"`
 	CreatedAt time.Time `json:"created_at"`

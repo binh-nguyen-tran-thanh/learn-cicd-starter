@@ -31,6 +31,7 @@ func respondWithJSON(w http.ResponseWriter, code int, payload interface{}) {
 		return
 	}
 	w.WriteHeader(code)
+	/* #nosec G705 -- This is not a security issue because the data being written is JSON-encoded, which will escape any potentially malicious content. */
 	_, err = w.Write([]byte(html.EscapeString(string(dat))))
 	if err != nil {
 		log.Printf("Critical error writing response: %s", err)
